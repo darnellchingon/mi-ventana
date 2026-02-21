@@ -4,8 +4,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class Ventana extends JFrame {
 
@@ -24,16 +29,60 @@ public class Ventana extends JFrame {
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
 		//this.setOpacity(1);
 		
+		JPanel loginContainer = new JPanel();
+		loginContainer.setSize(400,400);
+		loginContainer.setLocation(50,50);
+		loginContainer.setBackground(Color.pink);
+		loginContainer.setOpaque(true);
+		loginContainer.setLayout(null);
+		this.add(loginContainer);
+		
+		
+		
 		//añadiendo elementos
 		//añadir un jlabel 
 		JLabel tagtittle = new JLabel();
 		tagtittle.setText("bienvenido");
-		tagtittle.setSize(100,40);
-		tagtittle.setLocation(175,20);
+		tagtittle.setSize(100,30);
+		tagtittle.setLocation(125,20);
 		tagtittle.setOpaque(true);
 		tagtittle.setVerticalAlignment(JLabel.CENTER);
 		tagtittle.setHorizontalAlignment(JLabel.CENTER);
 		tagtittle.setFont(new Font("Arial",Font.PLAIN,22));
-		this.add(tagtittle);
+		//this.add(tagtittle);
+		loginContainer.add((tagtittle));
+		
+		
+		JTextField emailImput = new JTextField();
+		emailImput.setSize(280,40);
+		emailImput.setLocation(60,200);
+		loginContainer.add(emailImput);
+		
+		JPasswordField contra = new JPasswordField();
+		contra.setSize(280,40);
+		contra.setLocation(60,100);
+		loginContainer.add(contra);
+		
+		
+		JCheckBox rememberme = new JCheckBox("hola mundo");
+		
+		rememberme.setSize(140,40);
+		rememberme.setLocation(60,300);
+		rememberme.setOpaque(false);
+		rememberme.setBorder(null);
+		
+		loginContainer.add(rememberme);
+		
+		JButton accesBtn = new JButton();
+		accesBtn.setText("acceder");
+		accesBtn.setFont(new Font("Arial",Font.ITALIC,18));
+		accesBtn.setBounds(120,350,200,40);
+		loginContainer.add(accesBtn);
+		
+		
+		
+		this.repaint();
+		
+		
 	}
 }
