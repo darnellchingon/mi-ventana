@@ -63,7 +63,7 @@ public class Ventana extends JFrame {
 		//this.add(tagtittle);
 		loginContainer.add((texto));
 		
-		
+		//this.add(tagtittle);fascvbav dvw	D
 		JTextField emailImput = new JTextField();
 		emailImput.setSize(280,40);
 		emailImput.setLocation(60,100);
