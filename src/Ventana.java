@@ -39,7 +39,7 @@ public class Ventana extends JFrame {
 		
 		
 		
-		//añadiendo elementos probando committs
+		//añadiendo elementos probando committsqsdfqwdqwdqwdqw
 		//añadir un jlabel 
 		JLabel tagtittle = new JLabel();
 		tagtittle.setText("bienvenido");
