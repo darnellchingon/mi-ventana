@@ -39,7 +39,7 @@ public class Ventana extends JFrame {
 		
 		
 		
-		//añadiendo elementos
+		//añadiendo elementos probando committs
 		//añadir un jlabel 
 		JLabel tagtittle = new JLabel();
 		tagtittle.setText("bienvenido");
@@ -52,15 +52,26 @@ public class Ventana extends JFrame {
 		//this.add(tagtittle);
 		loginContainer.add((tagtittle));
 		
+		JLabel texto = new JLabel();
+		texto.setText("bienvenido");
+		texto.setSize(100,30);
+		texto.setLocation(125,160);
+		texto.setOpaque(true);
+		texto.setVerticalAlignment(JLabel.CENTER);
+		texto.setHorizontalAlignment(JLabel.CENTER);
+		texto.setFont(new Font("Arial",Font.PLAIN,22));
+		//this.add(tagtittle);
+		loginContainer.add((texto));
+		
 		
 		JTextField emailImput = new JTextField();
 		emailImput.setSize(280,40);
-		emailImput.setLocation(60,200);
+		emailImput.setLocation(60,100);
 		loginContainer.add(emailImput);
 		
 		JPasswordField contra = new JPasswordField();
 		contra.setSize(280,40);
-		contra.setLocation(60,100);
+		contra.setLocation(60,200);
 		loginContainer.add(contra);
 		
 		
