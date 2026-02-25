@@ -76,6 +76,17 @@ public class Ventana extends JFrame {
 		loginContainer.add((qwerty));
 		
 		
+		JLabel gank = new JLabel();
+		gank.setText("i have forgot my password");
+		gank.setSize(300,30);
+		gank.setLocation(140,304);
+		gank.setOpaque(false);
+		gank.setVerticalAlignment(JLabel.CENTER);
+		gank.setHorizontalAlignment(JLabel.CENTER);
+		gank.setFont(new Font("Arial",Font.PLAIN,12));
+		//this.add(tagtittle);
+		loginContainer.add((gank));
+		
 		
 		//this.add(tagtittle);fascvbav dvw	D
 		JTextField emailImput = new JTextField();
@@ -83,13 +94,16 @@ public class Ventana extends JFrame {
 		emailImput.setLocation(60,100);
 		loginContainer.add(emailImput);
 		
+		
 		JPasswordField contra = new JPasswordField();
 		contra.setSize(280,40);
 		contra.setLocation(60,200);
 		loginContainer.add(contra);
 		
 		
+		
 		JCheckBox rememberme = new JCheckBox("hello world");
+		
 		
 		rememberme.setSize(140,40);
 		rememberme.setLocation(60,300);
