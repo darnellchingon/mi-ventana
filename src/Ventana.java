@@ -75,6 +75,7 @@ public class Ventana extends JFrame {
 		//this.add(tagtittle);
 		loginContainer.add((qwerty));
 		
+		//this.setLocation(200, 200);
 		
 		JLabel gank = new JLabel();
 		gank.setText("i have forgot my password");
