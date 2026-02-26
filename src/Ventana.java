@@ -175,7 +175,7 @@ public class Ventana extends JFrame {
 
 		JLabel register = new JLabel();
 
-		register.setText("Sign up ");
+		register.setText("Create account ");
 		register.setSize(100,30);
 		register.setLocation(145,10);
 		register.setOpaque(true);
