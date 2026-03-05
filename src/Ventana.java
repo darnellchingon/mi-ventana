@@ -2,7 +2,12 @@ import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.io.IOException;
+
+
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -43,6 +48,18 @@ public class Ventana extends JFrame {
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
 		//this.login();
 		//this.signUp();
+		
+		try {
+			Image iconImage = new ImageIO.read(getClass().getResource("/images/duke3.png"));
+			
+			this.setIconImage(iconImage);
+			
+		}catch (IOException e) {
+			
+			e.printStackTrace();
+			
+			
+		}
 		
 		
 		
@@ -398,9 +415,8 @@ public class Ventana extends JFrame {
 			};
 		
 		
-		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
-		//quisiera ver esto en clase con usted
-		// para aclarar dudas
+		
+		
 			JTable tabla = new JTable(datos, info) {
 			    public boolean isCellEditable(int r, int c) {
 			        return false;
@@ -449,102 +465,5 @@ public class Ventana extends JFrame {
 
 
 
-	public void users() {
-		
-		JPanel panelUsers = new JPanel();
-			panelUsers.setLayout(null);
-			panelUsers.setBounds(0,0,950,600);
-			panelUsers.setBackground(Color.pink);
-		
-		String[] info = {
-			    "No. Control",
-			    "Nombre",
-			    "Apellidos",
-			    "Correo",
-			    "Semestre",
-			    "Carrera",
-			    "Acciones"
-			};
-	
-		Object[][] datos = {
-			    {"001","Juan","Perez","juan@mail.com","3","Sistemas","Acciones"},
-			    {"002","Ana","Lopez","ana@mail.com","2","TI","Acciones"},
-			    {"003","Luis","Garcia","luis@mail.com","5","Software","Acciones"},
-			    {"004","Carlos","Ramirez","carlos@mail.com","1","Sistemas","Acciones"},
-			    {"005","Maria","Hernandez","maria@mail.com","4","TI","Acciones"},
-			    {"006","Pedro","Sanchez","pedro@mail.com","6","Software","Acciones"},
-			    {"007","Laura","Torres","laura@mail.com","3","Sistemas","Acciones"},
-			    {"008","Diego","Flores","diego@mail.com","2","TI","Acciones"},
-			    {"009","Sofia","Vargas","sofia@mail.com","5","Software","Acciones"},
-			    {"010","Miguel","Castro","miguel@mail.com","1","Sistemas","Acciones"},
-			    {"011","Daniela","Rojas","daniela@mail.com","4","TI","Acciones"},
-			    {"012","Jorge","Mendoza","jorge@mail.com","6","Software","Acciones"},
-			    {"013","Fernanda","Ortega","fernanda@mail.com","3","Sistemas","Acciones"},
-			    {"014","Ricardo","Navarro","ricardo@mail.com","2","TI","Acciones"},
-			    {"015","Valeria","Campos","valeria@mail.com","5","Software","Acciones"},
-			    {"016","Eduardo","Silva","eduardo@mail.com","1","Sistemas","Acciones"},
-			    {"017","Paola","Reyes","paola@mail.com","4","TI","Acciones"},
-			    {"018","Andres","Morales","andres@mail.com","6","Software","Acciones"},
-			    {"019","Kevin","Delgado","kevin@mail.com","2","Sistemas","Acciones"},
-			    {"020","Lucia","Pineda","lucia@mail.com","3","TI","Acciones"},
-			    {"021","Oscar","Cruz","oscar@mail.com","5","Software","Acciones"},
-			    {"022","Natalia","Ibarra","natalia@mail.com","1","Sistemas","Acciones"},
-			    {"023","Hector","Salazar","hector@mail.com","4","TI","Acciones"},
-			    {"024","Camila","Nunez","camila@mail.com","6","Software","Acciones"},
-			    {"025","Ivan","Bravo","ivan@mail.com","2","Sistemas","Acciones"},
-			    {"026","Alejandra","Soto","alejandra@mail.com","3","TI","Acciones"},
-			    {"027","Roberto","Acosta","roberto@mail.com","5","Software","Acciones"},
-			    {"028","Mariana","Velazquez","mariana@mail.com","1","Sistemas","Acciones"}
-			};
-		
-		
-		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
-		//quisiera ver esto en clase con usted
-		// para aclarar dudas
-			JTable tabla = new JTable(datos, info) {
-			    public boolean isCellEditable(int r, int c) {
-			        return false;
-			    }
-			};
-			
-			
-			 JLabel userTittle = new JLabel("Users");
-			 	userTittle.setOpaque(false);
-			 	userTittle.setBounds(410, 10, 900, 50);
-			 	userTittle.setFont(new Font("Segoe UI", Font.ITALIC, 52));
-			 	panelUsers.add(userTittle);
-			    	
-			 
-			 JButton downloadBtn = new JButton("Download");
-			 	downloadBtn.setBounds(540, 90, 100, 30);
-			 	panelUsers.add(downloadBtn);
-			 
-	
-			 JLabel lblUsers = new JLabel("Users:");
-			 	lblUsers.setBounds(50, 50, 80, 30); 
-			 	lblUsers.setFont(new Font("Segoe UI", Font.ITALIC, 26));
-			 	lblUsers.setOpaque(true);
-			 	panelUsers.add(lblUsers);
-			 
-			 JLabel number = new JLabel("       28");
-			 	number.setOpaque(true);
-			 	number.setBounds(50, 80, 80, 30); 
-			 	number.setFont(new Font("Arial", Font.BOLD, 16));
-			 	panelUsers.add(number);
-			 
-	
-			 JButton btnAdd = new JButton("Add");
-			 	btnAdd.setBounds(660, 90, 100, 30);
-			 	panelUsers.add(btnAdd);
-			 
-			
-			JScrollPane scroll = new JScrollPane(tabla);
-			scroll.setBounds(120,150,700,300);
-			panelUsers.add(scroll);
-				this.add(panelUsers);
-				this.revalidate();
-				this.repaint();
-		    
-	}
 
 }
