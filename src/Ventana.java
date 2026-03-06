@@ -3,9 +3,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import javax.imageio.ImageIO;
+import javax.security.auth.login.LoginContext;
+
 import java.io.IOException;
-
-
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -46,22 +47,26 @@ public class Ventana extends JFrame {
 		this.setTitle("ola bro");
 		this.setLayout(null);
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
-		//this.login();
+		
+		
+		ImageIcon imagen = new ImageIcon("src/images/duke3.png");
+		JLabel etiquetaImagen = new JLabel(imagen);
+		etiquetaImagen.setBounds(10,50,200,300);
+		this.add(etiquetaImagen);
+	
+		
+		
+		
+		
+		
+		
+		this.login();
 		//this.signUp();
-		
-		try {
-			Image iconImage = new ImageIO.read(getClass().getResource("/images/duke3.png"));
-			
-			this.setIconImage(iconImage);
-			
-		}catch (IOException e) {
-			
-			e.printStackTrace();
-			
-			
-		}
+		//this.users();
 		
 		
+		
+		// ME PIDIOQUE ASI LO SUBIERA
 		
 		JMenuBar bar = new JMenuBar();
 			this.setJMenuBar(bar);
@@ -94,7 +99,7 @@ public class Ventana extends JFrame {
 			
 		
 		
-		this.users();
+		//this.users();
 		this.setVisible(true);
 		this.repaint();
 
@@ -104,24 +109,26 @@ public class Ventana extends JFrame {
 
 		public void login() {
 
-		
-
-		
-
+			
+			
+			
+			
 		JPanel loginContainer = new JPanel();
 			loginContainer.setSize(400,400);
-			loginContainer.setLocation(50,50);
+			loginContainer.setLocation(250,50);
 			loginContainer.setBackground(Color.pink);
 			loginContainer.setOpaque(true);
 			loginContainer.setLayout(null);
 		this.add(loginContainer);
-
 		
 
+	
+
+	
 
 
 		JLabel tagtittle = new JLabel();
-			tagtittle.setText("welcome ");
+			tagtittle.setText("Welcome ");
 			tagtittle.setSize(100,30);
 			tagtittle.setLocation(145,10);
 			tagtittle.setOpaque(true);
@@ -133,7 +140,7 @@ public class Ventana extends JFrame {
 
 
 		JLabel texto = new JLabel();
-			texto.setText("password");
+			texto.setText("Password");
 			texto.setSize(100,30);
 			texto.setLocation(60,160);
 			texto.setOpaque(false);
@@ -150,7 +157,7 @@ public class Ventana extends JFrame {
 
 		JLabel qwerty = new JLabel();
 			qwerty.setText("User");
-			qwerty.setSize(100,30);
+			qwerty.setSize(150,30);
 			qwerty.setLocation(40,60);
 			qwerty.setOpaque(false);
 			qwerty.setVerticalAlignment(JLabel.CENTER);
