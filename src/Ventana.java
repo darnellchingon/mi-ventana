@@ -5,8 +5,8 @@ import java.awt.Font;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 import javax.security.auth.login.LoginContext;
-
 import java.io.IOException;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -33,12 +33,6 @@ public class Ventana extends JFrame {
 	public Ventana () {
 		
 		
-		
-		
-		
-		
-		
-		
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
 		this.setMinimumSize(new Dimension(950,220));
@@ -54,6 +48,7 @@ public class Ventana extends JFrame {
 		etiquetaImagen.setBounds(10,50,200,300);
 		this.add(etiquetaImagen);
 	
+		
 		
 		
 		
@@ -98,7 +93,7 @@ public class Ventana extends JFrame {
 			
 			
 		
-		
+	
 		//this.users();
 		this.setVisible(true);
 		this.repaint();
@@ -206,9 +201,12 @@ public class Ventana extends JFrame {
 			loginContainer.add(accesBtn);
 
 		}
-
 		
-
+		
+		
+	
+	
+	
 	public void signUp () {
 
 		JPanel rgsContainer = new JPanel();

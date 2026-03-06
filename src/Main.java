@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Ventana miVentana  = new Ventana ();
-		
+		CalculadoraVentana yoyo = new CalculadoraVentana();
 	}
 
 }
