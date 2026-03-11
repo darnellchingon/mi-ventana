@@ -1,3 +1,4 @@
+package ventana;
 import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -358,6 +359,8 @@ public class Ventana extends JFrame {
 		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
 		//quisiera ver esto en clase con usted
 		// para aclarar dudas
+		
+		
 			JTable tabla = new JTable(datos, info) {
 			    public boolean isCellEditable(int r, int c) {
 			        return false;
