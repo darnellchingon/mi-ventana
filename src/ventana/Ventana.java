@@ -3,12 +3,21 @@ import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import javax.imageio.ImageIO;
+import javax.security.auth.login.LoginContext;
+import java.io.IOException;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -23,8 +32,8 @@ import javax.swing.JTextField;
 public class Ventana extends JFrame {
 
 	public Ventana () {
-
-		this.setVisible(true);
+		
+		
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
 		this.setMinimumSize(new Dimension(950,220));
@@ -33,10 +42,61 @@ public class Ventana extends JFrame {
 		this.setTitle("ola bro");
 		this.setLayout(null);
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
-		//this.login();
-		//this.signUp();
 		
-		this.users();
+		
+		ImageIcon imagen = new ImageIcon("src/images/duke3.png");
+		JLabel etiquetaImagen = new JLabel(imagen);
+		etiquetaImagen.setBounds(10,50,200,300);
+		this.add(etiquetaImagen);
+	
+		
+		
+		
+		
+		
+		
+		
+		this.login();
+		//this.signUp();
+		//this.users();
+		
+		
+		
+		// ME PIDIOQUE ASI LO SUBIERA
+		
+		JMenuBar bar = new JMenuBar();
+			this.setJMenuBar(bar);
+			
+		JMenu menu1 = new JMenu("FIle");
+			bar.add(menu1);
+			
+		JMenuItem file = new JMenuItem("Open");
+			menu1.add(file);
+		
+		JMenuItem file2 = new JMenuItem("New");
+			menu1.add(file2);
+			
+		JMenuItem file3 = new JMenuItem("Close");
+			menu1.add(file3);
+			
+			menu1.addSeparator();
+			JMenu menu2 = new JMenu("FIle");
+			menu1.add(menu2);
+			
+		JMenuItem file4 = new JMenuItem("Open");
+			menu2.add(file4);
+		
+		JMenuItem file5 = new JMenuItem("New");
+			menu2.add(file5);
+			
+		JMenuItem file6 = new JMenuItem("Close");
+			menu2.add(file6);
+			
+			
+		
+	
+		//this.users();
+		this.setVisible(true);
 		this.repaint();
 
 	}
@@ -45,24 +105,26 @@ public class Ventana extends JFrame {
 
 		public void login() {
 
-		
-
-		
-
+			
+			
+			
+			
 		JPanel loginContainer = new JPanel();
 			loginContainer.setSize(400,400);
-			loginContainer.setLocation(50,50);
+			loginContainer.setLocation(250,50);
 			loginContainer.setBackground(Color.pink);
 			loginContainer.setOpaque(true);
 			loginContainer.setLayout(null);
 		this.add(loginContainer);
-
 		
 
+	
+
+	
 
 
 		JLabel tagtittle = new JLabel();
-			tagtittle.setText("welcome ");
+			tagtittle.setText("Welcome ");
 			tagtittle.setSize(100,30);
 			tagtittle.setLocation(145,10);
 			tagtittle.setOpaque(true);
@@ -74,7 +136,7 @@ public class Ventana extends JFrame {
 
 
 		JLabel texto = new JLabel();
-			texto.setText("password");
+			texto.setText("Password");
 			texto.setSize(100,30);
 			texto.setLocation(60,160);
 			texto.setOpaque(false);
@@ -91,7 +153,7 @@ public class Ventana extends JFrame {
 
 		JLabel qwerty = new JLabel();
 			qwerty.setText("User");
-			qwerty.setSize(100,30);
+			qwerty.setSize(150,30);
 			qwerty.setLocation(40,60);
 			qwerty.setOpaque(false);
 			qwerty.setVerticalAlignment(JLabel.CENTER);
@@ -140,9 +202,12 @@ public class Ventana extends JFrame {
 			loginContainer.add(accesBtn);
 
 		}
-
 		
-
+		
+		
+	
+	
+	
 	public void signUp () {
 
 		JPanel rgsContainer = new JPanel();
@@ -356,9 +421,12 @@ public class Ventana extends JFrame {
 			};
 		
 		
+<<<<<<< HEAD:src/ventana/Ventana.java
 		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
 		//quisiera ver esto en clase con usted
 		// para aclarar dudas
+=======
+>>>>>>> f96d4f52c8add7fa8b0f4955f2e3b08d2d209c35:src/Ventana.java
 		
 		
 			JTable tabla = new JTable(datos, info) {
@@ -407,5 +475,7 @@ public class Ventana extends JFrame {
 		    
 	}
 
-}
 
+
+
+}
