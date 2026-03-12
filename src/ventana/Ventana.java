@@ -421,12 +421,11 @@ public class Ventana extends JFrame {
 			};
 		
 		
-<<<<<<< HEAD:src/ventana/Ventana.java
+
 		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
 		//quisiera ver esto en clase con usted
 		// para aclarar dudas
-=======
->>>>>>> f96d4f52c8add7fa8b0f4955f2e3b08d2d209c35:src/Ventana.java
+
 		
 		
 			JTable tabla = new JTable(datos, info) {

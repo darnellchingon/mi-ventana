@@ -23,7 +23,7 @@ public class Interes extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		
-		
+		//TITULO DE LA PESTANA
 		JLabel titulo = new JLabel("interés", JLabel.CENTER);
 		titulo.setFont(new Font("Arial", Font.BOLD, 18));
 		this.add(titulo, BorderLayout.NORTH);
