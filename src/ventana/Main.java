@@ -8,7 +8,8 @@ public class Main {
 		//Ventana miVentana  = new Ventana ();
 		Interes i = new Interes();
 		//CalculadoraVentana yoyo = new CalculadoraVentana();
-
+		new Draw();
+		
 	
 	}
 

@@ -46,16 +46,16 @@ public class Gui extends JFrame {
 
         setContentPane(contentPane);
 
-        // ===== TITULO =====
+        //TITULO 
         JLabel titulo = new JLabel("REGISTRO DE USUARIO", JLabel.CENTER);
         contentPane.add(titulo, BorderLayout.NORTH);
 
-        // ===== PANEL CENTRAL =====
+        //  PANEL CENTRAL 
         JPanel panelCentral = new JPanel();
         panelCentral.setLayout(new GridLayout(2,2,10,10));
         contentPane.add(panelCentral, BorderLayout.CENTER);
 
-        // ===== DATOS GENERALES =====
+        // DATOS GENERALES
         JPanel datosGenerales = new JPanel(new GridLayout(6,2,5,5));
         datosGenerales.setBorder(BorderFactory.createTitledBorder("Datos Generales"));
 
@@ -90,7 +90,7 @@ public class Gui extends JFrame {
 
         panelCentral.add(datosGenerales);
 
-        // ===== PERFIL USUARIO =====
+        //PERFIL USUARIO
         JPanel perfil = new JPanel(new FlowLayout());
         perfil.setBorder(BorderFactory.createTitledBorder("Perfil del usuario"));
 
@@ -102,7 +102,7 @@ public class Gui extends JFrame {
 
         panelCentral.add(perfil);
 
-        // ===== DATOS OPCIONALES =====
+        // DATOS OPCIONALES 
         JPanel opcionales = new JPanel(new GridLayout(1,2));
         opcionales.setBorder(BorderFactory.createTitledBorder("Datos opcionales"));
 
@@ -118,7 +118,7 @@ public class Gui extends JFrame {
 
         panelCentral.add(opcionales);
 
-        // ===== PANEL VACIO (para completar grid) =====
+        //  PANEL VACIO 
         JPanel extra = new JPanel();
         panelCentral.add(extra);
         
@@ -127,7 +127,7 @@ public class Gui extends JFrame {
         JCheckBox mostrarFecha = new JCheckBox("Mostrar fecha nacimiento");
         extra.add(mostrarFecha);
 
-        // ===== BOTONES =====
+        //BOTONES 
         JPanel botones = new JPanel(new FlowLayout());
 
         contentPane.add(botones, BorderLayout.SOUTH);
