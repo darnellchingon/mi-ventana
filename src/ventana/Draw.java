@@ -21,7 +21,7 @@ public class Draw extends JPanel {
         ventana.setVisible(true);
 
         try{
-            img = ImageIO.read(new File("src/images/imresizer-duke5.png")); // cambia por tu imagen
+            img = ImageIO.read(new File("src/images/imresizer-duke5.png"));	
         }catch(Exception e){
             System.out.println("No se pudo cargar la imagen");
         }
