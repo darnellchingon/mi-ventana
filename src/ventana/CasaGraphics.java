@@ -12,9 +12,12 @@ public class CasaGraphics extends JPanel {
         g.setColor(new Color(180, 220, 220));
         g.fillRect(0, 0, 800, 400);
         
-  // Suelo
+        // Suelo
         g.setColor(new Color(180, 130, 60));
         g.fillRect(0, 400, 800, 200);
+        
+        
+        
         
         // Suelo
         g.setColor(new Color(80, 130, 60));

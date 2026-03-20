@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.imageio.ImageIO;
 import javax.security.auth.login.LoginContext;
 import java.io.IOException;
@@ -200,6 +203,13 @@ public class Ventana extends JFrame {
 			accesBtn.setFont(new Font("Arial",Font.ITALIC,18));
 			accesBtn.setBounds(120,350,200,40);
 			loginContainer.add(accesBtn);
+			
+			accesBtn.addActionListener(new ActionListener() {
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			        System.out.println("ola");
+			    }
+			});
 
 		}
 		
@@ -363,13 +373,19 @@ public class Ventana extends JFrame {
 			rgsContainer.add(coloniasCombo);
 
 
-		JButton regButton = new JButton("register");
-			regButton.setFont(new Font("Arial",Font.ITALIC,18));
-			regButton.setBounds(105,350,200,40);
+
+			// ... dentro de tu método o constructor donde creas la interfaz
+
+			JButton regButton = new JButton("register");
+			regButton.setFont(new Font("Arial", Font.ITALIC, 18));
+			regButton.setBounds(105, 350, 200, 40);
 			rgsContainer.add(regButton);
-
-		
-
+			regButton.addActionListener(new ActionListener() {
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			        System.out.println("ola");
+			    }
+			}); // <- cierra el addActionListener
 	}
 
 	public void users() {
