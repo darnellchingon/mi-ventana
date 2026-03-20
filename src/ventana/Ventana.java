@@ -207,7 +207,17 @@ public class Ventana extends JFrame {
 			accesBtn.addActionListener(new ActionListener() {
 			    @Override
 			    public void actionPerformed(ActionEvent e) {
-			        System.out.println("ola");
+			        String usuarioValido = "admin@uabcs.mx";
+			        String passwordValida = "123456";
+
+			        String usuario = emailImput.getText();
+			        String password = contra.getText();
+
+			        if(usuario.equals(usuarioValido) && password.equals(passwordValida)) {
+			            javax.swing.JOptionPane.showMessageDialog(null, "¡Bienvenido!", "Acceso correcto", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+			        } else {
+			            javax.swing.JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+			        }
 			    }
 			});
 
