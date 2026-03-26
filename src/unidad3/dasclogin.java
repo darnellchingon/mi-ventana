@@ -10,7 +10,7 @@ public class dasclogin extends JFrame implements ActionListener {
     private JTextField txtCorreo;
     private JPasswordField txtPassword;
     private JButton btnAcceder, btnCrear;
-    private JMenuItem itemAcceder, itemRegistrar;
+    private JMenuItem itemLogin, itemRegistrar;
 
     public dasclogin() {
         setTitle("Login - UABCS");
@@ -20,18 +20,34 @@ public class dasclogin extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        //MENu
+       
         JMenuBar mb = new JMenuBar();
+
+        
         JMenu mCuenta = new JMenu("Cuenta");
-        itemAcceder = new JMenuItem("Acceder");
-        itemRegistrar = new JMenuItem("Registrar");
-        itemAcceder.addActionListener(this);
+        itemLogin = new JMenuItem("Login");
+        itemRegistrar = new JMenuItem("Registro");
+        JMenuItem itemRecuperar = new JMenuItem("Recuperación de cuenta");
+        itemLogin.addActionListener(this);
         itemRegistrar.addActionListener(this);
-        mCuenta.add(itemAcceder); mCuenta.add(itemRegistrar);
-        mb.add(new JMenu("Archivo")); mb.add(new JMenu("Ayuda")); mb.add(mCuenta);
+        mCuenta.add(itemLogin); mCuenta.add(itemRegistrar); mCuenta.add(itemRecuperar);
+
+     
+        JMenu mUsuarios = new JMenu("Usuarios");
+        mUsuarios.add(new JMenuItem("Alta"));
+        mUsuarios.add(new JMenuItem("Baja"));
+        mUsuarios.add(new JMenuItem("Consultar"));
+
+        
+        JMenu mAyuda = new JMenu("Ayuda");
+        mAyuda.add(new JMenuItem("¿Cómo crear un usuario?"));
+        mAyuda.add(new JMenuItem("¿Cómo acceder al sistema?"));
+        mAyuda.add(new JMenuItem("¿Qué pasa si olvidé mi contraseña?"));
+
+        mb.add(mCuenta); mb.add(mUsuarios); mb.add(mAyuda);
         setJMenuBar(mb);
 
-        // TEXTO
+        
         JLabel lblUabcs = new JLabel("UABCS - DASC");
         lblUabcs.setFont(new Font("Arial", Font.BOLD, 28));
         lblUabcs.setBounds(50, 30, 300, 40);
@@ -47,40 +63,44 @@ public class dasclogin extends JFrame implements ActionListener {
         lblAdmin.setBounds(50, 110, 300, 30);
         add(lblAdmin);
 
-        // --- CAMPOS ---
+      
         JLabel l1 = new JLabel("Correo electrónico");
         l1.setBounds(50, 160, 150, 20);
         add(l1);
 
         txtCorreo = new JTextField();
-        txtCorreo.setBounds(50, 185, 350, 40);
-        txtCorreo.setBackground(new Color(230, 240, 240)); 
+        txtCorreo.setBounds(50, 185, 350, 45);
+        txtCorreo.setBackground(new Color(225, 236, 233)); 
         add(txtCorreo);
 
         JLabel l2 = new JLabel("Contraseña");
-        l2.setBounds(50, 240, 150, 20);
+        l2.setBounds(50, 250, 150, 20);
         add(l2);
 
         txtPassword = new JPasswordField();
-        txtPassword.setBounds(50, 265, 350, 40);
-        txtPassword.setBackground(new Color(230, 240, 240));
+        txtPassword.setBounds(50, 275, 350, 45);
+        txtPassword.setBackground(new Color(225, 236, 233));
         add(txtPassword);
 
-        // BOTONES
+        
         btnAcceder = new JButton("ACCEDER");
-        btnAcceder.setBounds(50, 340, 350, 45);
+        btnAcceder.setBounds(50, 360, 350, 40);
         btnAcceder.setBackground(Color.WHITE);
         btnAcceder.setBorder(new LineBorder(Color.BLACK, 3));
         btnAcceder.setFont(new Font("Arial", Font.BOLD, 14));
         btnAcceder.addActionListener(this);
         add(btnAcceder);
 
+        JLabel lblPregunta = new JLabel("¿Aún no tienes cuenta?");
+        lblPregunta.setBounds(150, 410, 200, 20);
+        add(lblPregunta);
+
         btnCrear = new JButton("Crea una aquí");
-        btnCrear.setBounds(125, 420, 200, 30);
+        btnCrear.setBounds(125, 435, 200, 30);
         btnCrear.addActionListener(this);
         add(btnCrear);
 
-     
+    
         try {
             ImageIcon imagen = new ImageIcon("src/images/perdedor1.jpg");
             Image imgEscalada = imagen.getImage().getScaledInstance(380, 450, Image.SCALE_SMOOTH);
@@ -88,7 +108,7 @@ public class dasclogin extends JFrame implements ActionListener {
             etiquetaImagen.setBounds(430, 30, 380, 450);
             add(etiquetaImagen);
         } catch (Exception e) {
-            System.out.println("Error al cargar imagen: " + e.getMessage());
+            System.out.println("No se encontró perdedor1.jpg en src/images/");
         }
     }
 
@@ -97,6 +117,9 @@ public class dasclogin extends JFrame implements ActionListener {
         if (e.getSource() == btnCrear || e.getSource() == itemRegistrar) {
             new Registro().setVisible(true);
             this.dispose();
+        }
+        if (e.getSource() == btnAcceder) {
+            JOptionPane.showMessageDialog(this, "Iniciando sesión...");
         }
     }
 }
