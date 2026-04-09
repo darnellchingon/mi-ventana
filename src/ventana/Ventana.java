@@ -1,8 +1,12 @@
+package ventana;
 import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.imageio.ImageIO;
 import javax.security.auth.login.LoginContext;
 import java.io.IOException;
@@ -48,8 +52,6 @@ public class Ventana extends JFrame {
 		etiquetaImagen.setBounds(10,50,200,300);
 		this.add(etiquetaImagen);
 	
-		
-		
 		
 		
 		
@@ -117,7 +119,9 @@ public class Ventana extends JFrame {
 		this.add(loginContainer);
 		
 
-	
+
+		
+		
 
 	
 
@@ -200,7 +204,15 @@ public class Ventana extends JFrame {
 			accesBtn.setBounds(120,350,200,40);
 			loginContainer.add(accesBtn);
 
-		}
+			accesBtn.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+System.out.println("ola");					
+				}
+			});
+			
+	}
 		
 		
 		
