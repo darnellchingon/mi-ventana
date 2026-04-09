@@ -203,6 +203,8 @@ public class Ventana extends JFrame {
 			accesBtn.setFont(new Font("Arial",Font.ITALIC,18));
 			accesBtn.setBounds(120,350,200,40);
 			loginContainer.add(accesBtn);
+			
+	
 
 			accesBtn.addActionListener(new ActionListener() {
 				
@@ -374,13 +376,19 @@ System.out.println("ola");
 			rgsContainer.add(coloniasCombo);
 
 
-		JButton regButton = new JButton("register");
-			regButton.setFont(new Font("Arial",Font.ITALIC,18));
-			regButton.setBounds(105,350,200,40);
+
+			// ... dentro de tu método o constructor donde creas la interfaz
+
+			JButton regButton = new JButton("register");
+			regButton.setFont(new Font("Arial", Font.ITALIC, 18));
+			regButton.setBounds(105, 350, 200, 40);
 			rgsContainer.add(regButton);
-
-		
-
+			regButton.addActionListener(new ActionListener() {
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			        System.out.println("ola");
+			    }
+			}); // <- cierra el addActionListener
 	}
 
 	public void users() {
@@ -432,6 +440,11 @@ System.out.println("ola");
 			};
 		
 		
+
+		//Profe, esta parte de aqui no le entendi, pero me daba error si intentaba otra cosa, pero la IA me ayudo,
+		//quisiera ver esto en clase con usted
+		// para aclarar dudas
+
 		
 		
 			JTable tabla = new JTable(datos, info) {
