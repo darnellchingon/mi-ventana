@@ -13,14 +13,12 @@ public class ladygaga extends JFrame {
 
     public ladygaga() {
 
-        // 🔹 Configuración ventana
         setTitle("Sistema");
         setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        // 🔹 MENÚ SUPERIOR
         JMenuBar menuBar = new JMenuBar();
 
         JMenu menuInicio = new JMenu("Inicio");
@@ -44,17 +42,14 @@ public class ladygaga extends JFrame {
 
         setJMenuBar(menuBar);
 
-        // 🔹 FONDO
         getContentPane().setBackground(new Color(0, 190, 190));
 
-        // 🔹 TÍTULO GRANDE
         JLabel titulo = new JLabel("Registro nuevo usuario");
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
         titulo.setForeground(Color.BLACK);
         titulo.setBounds(180, 30, 350, 40);
         add(titulo);
 
-        // 🔹 Usuario
         JLabel lblUsuario = new JLabel("Ingrese el nombre de usuario:");
         lblUsuario.setOpaque(true);
         lblUsuario.setBackground(Color.BLACK);
@@ -66,7 +61,6 @@ public class ladygaga extends JFrame {
         txtUsuario.setBounds(180, 120, 260, 30);
         add(txtUsuario);
 
-        // 🔹 Correo
         JLabel lblCorreo = new JLabel("Ingrese el correo electrónico:");
         lblCorreo.setOpaque(true);
         lblCorreo.setBackground(Color.BLACK);
@@ -78,7 +72,6 @@ public class ladygaga extends JFrame {
         txtCorreo.setBounds(180, 190, 260, 30);
         add(txtCorreo);
 
-        // 🔹 Descripción
         JLabel lblDescripcion = new JLabel("Escriba una descripción:");
         lblDescripcion.setOpaque(true);
         lblDescripcion.setBackground(Color.BLACK);
@@ -90,12 +83,10 @@ public class ladygaga extends JFrame {
         txtDescripcion.setBounds(180, 260, 260, 80);
         add(txtDescripcion);
 
-        // 🔹 Botón Volver
         JButton btnVolver = new JButton("Volver");
         btnVolver.setBounds(300, 370, 120, 30);
         add(btnVolver);
 
-        // 🔹 Acción volver (limpiar)
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,7 +94,6 @@ public class ladygaga extends JFrame {
             }
         });
 
-        // 🔹 Mostrar
         setVisible(true);
     }
 
