@@ -75,6 +75,7 @@ public class clericot extends JFrame {
     private JButton crearBotonColor(Color color) {
         JButton btn = new JButton();
         btn.setBackground(color);
+        setDoubleBuffered(true);
         btn.setPreferredSize(new Dimension(40, 40));
 
         btn.addActionListener(e -> colorActual = color);
@@ -90,11 +91,14 @@ public class clericot extends JFrame {
 
         public Lienzo() {
             setBackground(Color.WHITE);
+                setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 
             addMouseListener(new MouseAdapter() {
                 public void mousePressed(MouseEvent e) {
                     xInicio = e.getX();
                     yInicio = e.getY();
+                        repaint();
+
 
                     if (herramienta.equals("PINCEL") || herramienta.equals("BORRADOR")) {
                         figuras.add(new Linea(xInicio, yInicio, xInicio, yInicio,
