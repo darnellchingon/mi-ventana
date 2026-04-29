@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -22,6 +23,12 @@ public class AuthView extends JFrame implements ActionListener {
 	public JTextField txtCorreo;
 	public JPasswordField txtPassword;
 	public JPasswordField txtConfirmPassword; 
+	public JTextField txtNombres;  
+	public JTextField txtApellidos; 
+	public JTextField txtEmpresa; 
+	public JComboBox<String> cmbAmbito; 
+	public JTextField txtCargo; 
+	public JTextField txtUsuario;
 	public JButton btnAcceder, btnCrear;
 	public JButton btnRegistrar; 
 	public JButton btnVolverLogin; 
@@ -130,10 +137,9 @@ public class AuthView extends JFrame implements ActionListener {
 	}
 
 	public void dascregistro() {
-		// Limpiar la ventana
 		this.getContentPane().removeAll();
 		this.setTitle("Registro - UABCS");
-		this.setSize(850, 550);
+		this.setSize(850, 750); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
@@ -176,51 +182,105 @@ public class AuthView extends JFrame implements ActionListener {
 		lblRegistro.setBounds(50, 110, 350, 30);
 		add(lblRegistro);
 
-		JLabel l1 = new JLabel("Correo electrónico");
-		l1.setBounds(50, 160, 150, 20);
-		add(l1);
+		
+		int yPos = 140;
+		int labelWidth = 150;
+		int fieldWidth = 350;
+		int fieldHeight = 35;
+		int spacing = 50;
 
+		JLabel lNombres = new JLabel("Nombres");
+		lNombres.setBounds(50, yPos, labelWidth, 20);
+		add(lNombres);
+		txtNombres = new JTextField();
+		txtNombres.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(txtNombres);
+		yPos += spacing;
+
+		JLabel lApellidos = new JLabel("Apellidos");
+		lApellidos.setBounds(50, yPos, labelWidth, 20);
+		add(lApellidos);
+		txtApellidos = new JTextField();
+		txtApellidos.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(txtApellidos);
+		yPos += spacing;
+
+		JLabel lEmpresa = new JLabel("Empresa");
+		lEmpresa.setBounds(50, yPos, labelWidth, 20);
+		add(lEmpresa);
+		txtEmpresa = new JTextField();
+		txtEmpresa.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(txtEmpresa);
+		yPos += spacing;
+
+		JLabel lAmbito = new JLabel("Ámbito");
+		lAmbito.setBounds(50, yPos, labelWidth, 20);
+		add(lAmbito);
+		String[] ambitos = {"Tecnología", "Salud", "Educación", "Comercio", "Otro"};
+		cmbAmbito = new JComboBox<>(ambitos);
+		cmbAmbito.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(cmbAmbito);
+		yPos += spacing;
+
+		JLabel lCargo = new JLabel("Cargo");
+		lCargo.setBounds(50, yPos, labelWidth, 20);
+		add(lCargo);
+		txtCargo = new JTextField();
+		txtCargo.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(txtCargo);
+		yPos += spacing;
+
+		JLabel lUsuario = new JLabel("Usuario");
+		lUsuario.setBounds(50, yPos, labelWidth, 20);
+		add(lUsuario);
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
+		add(txtUsuario);
+		yPos += spacing;
+
+		JLabel lCorreo = new JLabel("Correo Electrónico");
+		lCorreo.setBounds(50, yPos, labelWidth, 20);
+		add(lCorreo);
 		txtCorreo = new JTextField();
-		txtCorreo.setBounds(50, 185, 350, 45);
-		txtCorreo.setBackground(new Color(225, 236, 233));
+		txtCorreo.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
 		add(txtCorreo);
+		yPos += spacing;
 
-		JLabel l2 = new JLabel("Contraseña");
-		l2.setBounds(50, 240, 150, 20);
-		add(l2);
-
+		JLabel lPassword = new JLabel("Contraseña");
+		lPassword.setBounds(50, yPos, labelWidth, 20);
+		add(lPassword);
 		txtPassword = new JPasswordField();
-		txtPassword.setBounds(50, 265, 350, 45);
-		txtPassword.setBackground(new Color(225, 236, 233));
+		txtPassword.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
 		add(txtPassword);
+		yPos += spacing;
 
-		JLabel l3 = new JLabel("Confirmar contraseña");
-		l3.setBounds(50, 320, 150, 20);
-		add(l3);
-
+		JLabel lConfirm = new JLabel("Repetir Contraseña");
+		lConfirm.setBounds(50, yPos, labelWidth, 20);
+		add(lConfirm);
 		txtConfirmPassword = new JPasswordField();
-		txtConfirmPassword.setBounds(50, 345, 350, 45);
-		txtConfirmPassword.setBackground(new Color(225, 236, 233));
+		txtConfirmPassword.setBounds(50, yPos + 25, fieldWidth, fieldHeight);
 		add(txtConfirmPassword);
+		yPos += spacing + 20;
 
 		btnRegistrar = new JButton("REGISTRAR");
-		btnRegistrar.setBounds(50, 410, 350, 40);
+		btnRegistrar.setBounds(50, yPos, fieldWidth, 40);
 		btnRegistrar.setBackground(Color.WHITE);
 		btnRegistrar.setBorder(new LineBorder(Color.BLACK, 3));
 		btnRegistrar.setFont(new Font("Arial", Font.BOLD, 14));
 		btnRegistrar.addActionListener(this);
 		add(btnRegistrar);
+		yPos += 60;
 
 		btnVolverLogin = new JButton("Volver al login");
-		btnVolverLogin.setBounds(125, 465, 200, 30);
+		btnVolverLogin.setBounds(125, yPos, 200, 30);
 		btnVolverLogin.addActionListener(this);
 		add(btnVolverLogin);
 
 		try {
 			ImageIcon imagen = new ImageIcon("src/images/perdedor1.jpg");
-			Image imgEscalada = imagen.getImage().getScaledInstance(380, 450, Image.SCALE_SMOOTH);
+			Image imgEscalada = imagen.getImage().getScaledInstance(380, 650, Image.SCALE_SMOOTH);
 			JLabel etiquetaImagen = new JLabel(new ImageIcon(imgEscalada));
-			etiquetaImagen.setBounds(430, 30, 380, 450);
+			etiquetaImagen.setBounds(430, 30, 380, 650);
 			add(etiquetaImagen);
 		} catch (Exception e) {
 			System.out.println("No se encontró perdedor1.jpg en src/images/");
@@ -251,6 +311,30 @@ public class AuthView extends JFrame implements ActionListener {
 
 	public String getConfirmPassword() {
 		return txtConfirmPassword != null ? new String(txtConfirmPassword.getPassword()) : "";
+	}
+
+	public String getNombres() {
+		return txtNombres != null ? txtNombres.getText() : "";
+	}
+
+	public String getApellidos() {
+		return txtApellidos != null ? txtApellidos.getText() : "";
+	}
+
+	public String getEmpresa() {
+		return txtEmpresa != null ? txtEmpresa.getText() : "";
+	}
+
+	public String getAmbito() {
+		return cmbAmbito != null ? (String) cmbAmbito.getSelectedItem() : "";
+	}
+
+	public String getCargo() {
+		return txtCargo != null ? txtCargo.getText() : "";
+	}
+
+	public String getUsuario() {
+		return txtUsuario != null ? txtUsuario.getText() : "";
 	}
 
 	public void showMessage(String message, boolean success) {

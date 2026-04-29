@@ -31,15 +31,21 @@ public class AuthController implements ActionListener {
                 vista.showMessage("Usuario o contraseña incorrectos", false);
             }
         } else if (e.getSource() == vista.btnRegistrar) {
-            String username = vista.getUsername();
+            String nombres = vista.getNombres();
+            String apellidos = vista.getApellidos();
+            String empresa = vista.getEmpresa();
+            String ambito = vista.getAmbito();
+            String cargo = vista.getCargo();
+            String usuario = vista.getUsuario();
+            String correo = vista.getUsername(); // Reutilizar getUsername para correo
             String password = vista.getPassword();
             String confirmPassword = vista.getConfirmPassword();
 
-            if (modelo.register(username, password, confirmPassword)) {
+            if (modelo.register(nombres, apellidos, empresa, ambito, cargo, usuario, correo, password, confirmPassword)) {
                 vista.showMessage("Registro exitoso", true);
                 vista.dasclogin(); // Volver a login
             } else {
-                vista.showMessage("Error en registro: contraseñas no coinciden", false);
+                vista.showMessage("Error en registro: valida los datos", false);
             }
         }
     }
